@@ -5,7 +5,12 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vincepergolizzi.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vp89
-github_username:  vp89
+github_username: vp89
+linkedin_username: vincepergolizzi
+instagram_username: vincepergolizzi
+
+
+google_analytics: UA-29327383-1
 
 # Build settings
 disqus:
