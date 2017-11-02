@@ -2,7 +2,7 @@
 layout: post
 title:  "C# Implicit Typing"
 date:   2017-03-21 07:30:00 -0500
-categories: programming c#
+categories: programming
 ---
 
 ### What is it?

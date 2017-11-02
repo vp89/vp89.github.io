@@ -2,7 +2,7 @@
 layout: post
 title:  "Git Rebase - Squash your first two commits"
 date:   2017-10-09 00:00:00 -0500
-categories: git
+categories: programming
 ---
 
 While playing with Git I learned that it originally did not allow you to rebase to the root commit, an option was added to enable this at some point and it

@@ -2,7 +2,7 @@
 layout: post
 title:  "Copy Dropwizard configuration file to target directory on build"
 date:   2017-02-26 14:50:00 -0500
-categories: java dropwizard maven
+categories: programming
 ---
 
 The Dropwizard convention is to build your whole application as one
