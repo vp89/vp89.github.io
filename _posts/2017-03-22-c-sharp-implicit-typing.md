@@ -81,8 +81,6 @@ declaring an object of type "SomeObject".
 SomeObject someObject = someObjectFactory.Create();
 ```
 
-### Thoughts
-
 The Java language designers considered the possibility of the above case so unacceptable that
 they have avoided implementing implicit typing at all. I think that's a little too conservative
 and Java desperately needs features like this to reduce it's verbosity.
@@ -90,5 +88,21 @@ and Java desperately needs features like this to reduce it's verbosity.
 As small and inconsequential this feature is, it's one of many reasons why C# is much more 
 pleasant to work with than Java.
 
+### Be explicit with your number types
+
+One common thing I see is the use of var with number types, this opens your program up to unexpected
+overflows because the compiler will default to use int, even if the next line after the declaration has
+you adding int.MaxValue! Even if you "know" your number couldn't possibly overflow, it's a good habit to
+be explicit and to always put some thought into sizing your number variables appropriately.
+
+I've done online programming challenges for job interviews where they catch this kind of careless out
+by putting your code through test cases which lead to overflow if you haven't thought carefully about
+the correct type to use, so be careful!
 
 
+```csharp
+var someNumber = 2;
+someNumber += int.MaxValue;
+Console.WriteLine(someNumber.GetType()); // System.Int32
+Console.WriteLine(someNumber); // -2147483647
+```
