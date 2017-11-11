@@ -3,6 +3,8 @@ title: Resume
 layout: page
 ---
 
+## Resume
+
 My resume is mostly on LinkedIn, I don't go into too much detail about my current role unless
 I am actively looking. If you are interested, feel free to contact me through LinkedIn for an
 up to date copy of my resume.
