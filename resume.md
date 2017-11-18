@@ -16,6 +16,7 @@ normally doesn't go on a resume so it's valuable to list it on here:
 
 |Course | Date Completed|
 |:---|---:|
+| Introduction to the Bash Shell on Mac OS and Linux | 11/17/2017 |
 | Mastering Git | 10/9/2017 |
 | How Git Works | 10/7/2017 |
 | Dependency Injection On-Ramp | 9/22/2017 |
