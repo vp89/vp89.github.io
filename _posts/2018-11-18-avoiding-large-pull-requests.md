@@ -2,7 +2,7 @@
 layout: post
 title:  "Avoiding large pull requests"
 date:   2018-11-18 00:00:00 -0500
-categories: sample
+categories: programming
 ---
 
 Large pull requests (LPRs) are a bad practice that all developers are aware of but yet engage in frequently. While there are many - sometimes fair - reasons for the existence of LPRs, teams should strive towards them being the exception rather than the norm.
