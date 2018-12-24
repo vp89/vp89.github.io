@@ -39,6 +39,8 @@ Your queries shouldn't be obfuscated behind some weird query builder incantation
 
 This goes hand in hand with #3. Dapper and hand-written queries is the way to go. If you are not of the .NET persuasion I'm sure your language has some lightweight micro-ORM where you can plug in hand-written queries. The micro-ORM can deal with the tedious mapping provided it does it with very minimal overhead, but it should definitely NOT generate queries or decide how many times a query is ran. That should always be explicitly done by your own hand. You can't properly reason about the performance of your app if such things are hidden from you.
 
+If you absolutely have to use the ORM, you should examine carefully every single call using a profiler to see how it translates into real calls to the database. Often ORMs have unexpected behaviors when pagination is involved or getting the top N results, so make sure you understand fully and document in your code how your ORM behaves. When it's time to debug performance issues this in-depth understanding is critical.
+
 ### Repository classes receive primitives only, no objects
 
 Don't bog your repository code down with untangling of complex objects. Each method in your repository class should have 1 parameter for each matching query parameter and anything else that might be needed for conditional query generation. You want to keep the business logic at the layer above that, so if you need to write another instance of the repository you are only rewriting the queries.
