@@ -21,7 +21,7 @@ I've read about this a lot and experienced it plenty in my career so far. It see
 
 These are very powerful concepts that when used with good taste and judgement allow you to build simple, modular code. Forget about inheritance, one of the worst concepts in programming history. Inheritance is guaranteed spaghetti. Code is not naturally hierarchical so stop trying to shoe-horn it into such a model.
 
-Think of your API as a power drill and your data layer code as a drill bit. You should be able to plug in different drill bits if you need to without buying a new drill each time. This doesn't require much more additional work once you know what you are doing, and the flexibility it provides you is huge. With everyone moving to managed services the ability to pivot to different data stores and services is becoming much more important.
+Code that calls out to external systems should be isolated and injected in to your business logic. Think of your program as a power drill and your current data layer code as just a drill bit. If you need to drive into a different screwhead, you don't buy a new drill you just insert a different bit. This doesn't require much more additional work once you know what you are doing, and the flexibility it provides you is huge. With everyone moving to managed services the ability to pivot to different data stores and services is becoming much more important.
 
 ### Tag your queries and do the database performance analysis at the database
 
