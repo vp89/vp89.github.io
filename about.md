@@ -5,15 +5,11 @@ layout: default
 
 <img src="photo.png" />
 
+### About me
+
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
 I am a backend software developer with 6 years of experience building data intensive applications.
-
-Currently I am working at Athenahealth, helping to build a new microservice in the clinical quality management space.
-
-Before that, I was at FortressGB doing backend development in the sports sector.
-
-I have found that I am becoming more opinionated with each passing year of being in software. I hope to share these nuggets of wisdom with you on this site.
 
 When I am not fighting computers, I am fighting humans. I am a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
 
@@ -24,3 +20,7 @@ When I am not fighting computers, I am fighting humans. I am a purple belt in Br
 - Support Analyst at FortressGB (Nov 2010 - Jan 2012)
 
 BSc, Computer Science from **THE** University of Hertfordshire
+
+### About this site
+
+All content here is based on my own opinions, experiences and understanding. I am not writing as a representative of any company I work with or have worked with in the past.
