@@ -1,21 +1,15 @@
 title: Vince Pergolizzi
-#email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Personal blog of Vince Pergolizzi Software Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vincepergolizzi.com" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: vp89
-linkedin_username: vincepergolizzi
-
-
-google_analytics: UA-29327383-1
 
 # Build settings
 disqus:
   shortname: https-vincepergolizzi-com
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
