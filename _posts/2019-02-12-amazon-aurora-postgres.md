@@ -53,13 +53,11 @@ Charging per 1M IOPS implies that everyone is guaranteed a certain service level
 
 ### Drawbacks
 
-- Potential incompatibility with open-source version could lead to "accept the vendor lock-in or migrate" decision.
-- You have to wait for Amazon to merge in patches from upstream.
-- Taking a risk on a new database product.
-    - Even though it's not written from scratch, you are still somewhat trusting Amazon to deliver on something which is not their core competency. They don't have a long track record in this space.
-- Lack of an expert community around this product.
-    - Historically DBAs have been the most prolific in producing educational content for database systems. Are there a lot of DBAs managing and learning about RDS Aurora? The product aims to make them redundant.
-- Poor instance selection, currently for Postgres you can't get a small machine for development/testing and the cheapest is ~$200 USD/day. They might benefit by making it more accessible for experimental/training use.
+There is potential for incompatibility with the open-source version. This could force you into an "accept the vendor lock-in or migrate" decision. You also have to wait for Amazon to merge in patches from upstream. I think Amazon is initially incentivized to maintain compatibility, but if they capture significant market share they may not feel as compelled to do that.
+
+You are taking a risk on a new database product. Even though it's not written from scratch, you are still somewhat trusting Amazon to deliver on something which is not their core competency. They don't have a long track record in this space. Another risk is the lack of an expert community around this product. Historically DBAs have been the most prolific in producing educational content for database systems. Are there a lot of DBAs managing and learning about RDS Aurora? The product aims to make them redundant. This is a general long-term trend I am worried about with the growing prevalence of managed services and maybe I will do a separate post on this in the future.
+
+Currently Aurora Postgres has quite limited instance selection. The cheapest machine is ~$200 USD/day just for the CPU. They might benefit by making it more accessible for experimental/training use. Aurora MySQL does have an instance that is ~30 USD/day so this could be coming to Postgres soon.
 
 ### Verdict
 
