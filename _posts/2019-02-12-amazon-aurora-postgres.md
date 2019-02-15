@@ -21,21 +21,21 @@ This reduction of synchronous work required allows them to claim much better and
 
 #### Better RAM utilization
 
-Because the database process does not use it's local filesystem, they are able to allocate all the memory that would normally be used for the filesystem cache to the database cache. There is a lot of duplication that happens when you run both a database and a filesystem cache, so this allows you to fully utilize the RAM you are paying for. They also claim that database cache is de-coupled from the database process entirely, so if the process dies or you need to restart it you don't lose your cached data.
+Because the database process does not use it's local filesystem, they are able to allocate all the memory that would normally be used for the filesystem cache to the database cache. There is a lot of duplication that happens when you run both a database and a filesystem cache, so this allows you to fully utilize the RAM you are paying for. They also claim that the database cache is de-coupled from the database process entirely, so if the process dies or you need to restart it you don't lose your cached data.
 
 #### Fast initialization of read replicas
 
-Steady state read replicas can be spun up without needing to copy the data to that process. Currently up to 15 replicas are supported and AWS provides an read replica endpoint so that consumers don't need to know which specific replica to point to.
+Steady state read replicas can be spun up without needing to copy data. The new process just points to the storage node. Currently up to 15 replicas are supported and AWS provides a "database endpoint" so that you can access them as 1 logical instance.
 
 #### On-demand instances
 
-Yet another advantage of decoupling the storage layer is tht they can provide you with on-demand instances, much like a lot of the MPP analytics systems currently do (Snowflake, Redshift). This allows you to pay for just the instance time you need which could save you money if your system has more bursty usage patterns.
+Yet another advantage of decoupling the storage layer is that they can provide you with on-demand instances, much like a lot of the MPP analytics systems currently do such as Snowflake or Redshift. This allows you to pay for just the instance time you need which could save you money if your system has large periods of the day with low activity.
 
 ### Pricing Comparison
 
 #### CPU
 
-I chose the `db.r4.16xlarge` instance for comparison which is the strongest instance you can rent that is commonly available across the different types:
+I chose the `db.r4.16xlarge` instance for comparison which is the strongest instance you can rent that is commonly available across these 3 different types:
 
 |Type|CPU per hour
 |---|---
@@ -43,7 +43,7 @@ I chose the `db.r4.16xlarge` instance for comparison which is the strongest inst
 |RDS Postgres|$8.00
 |RDS SQL Server|$24.32
 
-As you can see, you get all the great features and improved performance for just 16% more.
+As you can see, you get all the great features and improved performance for just 16% more. It is also still substantially cheaper than other closed source databases such as SQL Server.
 
 I did not mention storage/IO because:
 - For storage at rest the cost differences are marginal across the 3 types
