@@ -57,7 +57,7 @@ There is potential for incompatibility with the open-source version. This could 
 
 You are taking a risk on a new database product. Even though it's not written from scratch, you are still somewhat trusting Amazon to deliver on something which is not their core competency. They don't have a long track record in this space. Another risk is the lack of an expert community around this product. Historically DBAs have been the most prolific in producing educational content for database systems. Are there a lot of DBAs managing and learning about RDS Aurora? The product aims to make them redundant. This is a general long-term trend I am worried about with the growing prevalence of managed services and maybe I will do a separate post on this in the future.
 
-Currently Aurora Postgres has quite limited instance selection. The cheapest machine is ~$200 USD/day just for the CPU. They might benefit by making it more accessible for experimental/training use. Aurora MySQL does have an instance that is ~30 USD/day so this could be coming to Postgres soon.
+Currently Aurora Postgres has quite limited instance selection. The cheapest machine is ~$200/month just for the CPU. They might benefit by making it more accessible for experimental/training use. Aurora MySQL does have an instance that is ~$30/month so this could be coming to Postgres soon.
 
 ### Verdict
 
