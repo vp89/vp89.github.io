@@ -31,6 +31,6 @@ What if you could solve the scaling problem without losing all the functionality
 
 Cloud-native databases are de-coupling the database process from the storage layer and leveraging the existing high-scale storage services that those companies have built. Examples of these are Aurora, Spanner, Cosmos. I am not as familiar with the latter two, but the Aurora project was wise to start off as a fork of MySQL and Postgres.
 
-The sharding middleware components allow the cluster to be abstracted away. Examples of these are Citus (Postgres) and Vitess (MySQL).
+The sharding middleware components allow the cluster to be abstracted away. You write `SELECT foo FROM bar WHERE tenantId = 'abc'` and the query router runs that query on the node which contains that data. Examples of these are Citus (Postgres) and Vitess (MySQL).
 
 To my knowledge there is not yet a cohesive well executed combination of these two approaches, but when it comes there would be very little reason to use NoSQL databases.
