@@ -30,9 +30,7 @@ The third line of the script opens `p4merge` which is my diff GUI of choice on M
 
 You will notice I am using the `-w` flag only on my remote call, this is because I don't want it to prompt me for a password, but rather take it from a local dot file. This makes the schema compare a convenient one-liner and allows me to quickly iterate on my database schema as I am building the rest of my app.
 
-I am using -x and -O to remove any permissions related DDL. This is because usernames may change across environments and I want this script to just focus on the schema which holds my app's data.
-
-I am also using sed to remove any comments, different versions of Postgres or different environments may output slightly different comments and I don't want to see diffs which don't actually represent a real diff of my schema.
+I'm using `-x` and `-O` to remove any permissions related DDL, as well as `sed` to remove comments. This is to avoid diff lines which don't represent a real diff to my schema. Fast iteration and reducing friction around using schema is the name of the game here.
 
 Before we can go ahead and run that, we will need to create or add to our `pgpass` file. This is a dot file that allows you to pass in database passwords to the various Postgres CLI utilities. If you are already familiar with this file, ensure that there is an entry to match the remote you setup earlier in the schema compare script.
 
