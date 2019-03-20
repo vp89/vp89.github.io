@@ -9,7 +9,7 @@ From most to least recently read, highly recommended books have a (+1) at the st
 
 **(+1) Hackers & Painters: Big Ideas from the Computer Age**
 
-I really like Graham's writing. His takes on strict/dynamic typing won't age well. He articulates really well why business-driven engineering produces shitty results, though I wish more of the book was about *that* rather than cryptic Lisp evangelism.
+Paul Graham is good at writing. His takes on strict/dynamic typing won't age well. He articulates really well why business-driven engineering produces shitty results, though I wish more of the book was about *that* rather than cryptic Lisp evangelism.
 
 **Rework**
 
