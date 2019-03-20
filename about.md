@@ -9,13 +9,14 @@ layout: default
 
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
-I am a backend software developer with 6 years of experience building data intensive applications.
+I am a software developer with 7 years of experience building data intensive applications across various industries.
 
 When I am not fighting computers, I am fighting humans. I am a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
 
 ### Resume
 
-- Lead Software Developer at Athenahealth (May 2017 - Present)
+- Founder & CEO at dojomanage.com (Mar 2019 - Present)
+- Lead Software Developer at Athenahealth (May 2017 - Mar 2019)
 - Software Developer at FortressGB (Feb 2012 - Apr 2017)
 - Support Analyst at FortressGB (Nov 2010 - Jan 2012)
 
