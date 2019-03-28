@@ -7,6 +7,12 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**(+1) Crossing the Chasm**
+
+Superior tech -> Strategic advantage -> "Whole product" -> Brand/reputation
+
+I probably need to read this again, I didn't quite understand how the model fits for products targeting existing markets. I liked the brief mention of intuition vs data in decision making, wish the author spent more time there, as I have some thoughts of my own brewing about what I like to call "cargo cult data driven decision making".
+
 **(+1) Hackers & Painters: Big Ideas from the Computer Age**
 
 Paul Graham is good at writing. His takes on strict/dynamic typing won't age well. He articulates really well why business-driven engineering produces shitty results, though I wish more of the book was about *that* rather than cryptic Lisp evangelism.
