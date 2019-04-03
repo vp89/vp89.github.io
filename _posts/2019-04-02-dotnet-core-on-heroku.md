@@ -5,7 +5,7 @@ date:   2019-04-02 00:00:00 -0000
 categories: programming
 ---
 
-On my current project I am using .NET Core. I initially threw it up on Heroku because it's free and quick to get going. As things stands now, I'm probably going to stay on Heroku for the main web and database hosting and drop-in a little AWS for some specific things.
+On my current project I am using .NET Core. I initially threw it up on Heroku because it's free and quick to get going. As things stand now, I'm probably going to stay on Heroku for the main web and database hosting and drop-in a little AWS for some specific things.
 
 Heroku has some excellent documentation and integration with the languages/runtimes they have chosen to fully support, unfortunately .NET Core is not currently one of them. I thought I would post some things I have learned while standing up my project on there.
 
