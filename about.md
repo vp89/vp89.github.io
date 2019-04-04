@@ -15,7 +15,7 @@ When I am not fighting computers, I am fighting humans. I am a purple belt in Br
 
 ### Resume
 
-- Founder & CEO at dojomanage.com (Mar 2019 - Present)
+- Founder at dojomanage.com (Mar 2019 - Present)
 - Lead Software Developer at Athenahealth (May 2017 - Mar 2019)
 - Software Developer at FortressGB (Feb 2012 - Apr 2017)
 - Support Analyst at FortressGB (Nov 2010 - Jan 2012)
