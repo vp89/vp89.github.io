@@ -7,6 +7,10 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**The Lean Startup**
+
+Pretty good. I liked chapter 11 the adaptive organization, "innovation sandbox" stuff, would be interesting to work at a corporate that actually walks the walk on that kind of stuff. Also liked the "proportial response" to each of the Five Whys question, I always thought the Five Whys was kind of goofy but I think the author here has changed my mind.
+
 **(+1) Crossing the Chasm**
 
 Superior tech -> Strategic advantage -> "Whole product" -> Brand/reputation
