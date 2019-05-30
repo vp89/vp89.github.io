@@ -9,9 +9,9 @@ layout: default
 
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
-I am a software developer with 7 years of experience building data intensive applications across various industries.
+I'm a software developer with 7 years of experience building data intensive applications in various industries.
 
-When I am not fighting computers, I am fighting humans. I am a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
+I'm also a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
 
 ### Resume
 
