@@ -7,6 +7,11 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**Domain-Driven Design Fundamentals (Pluralsight)**
+
+Most of the stuff I thought sensible seems orthogonal to OOP, though the course really pitches that "rich domain model" ORM-heavy
+style of programming. Never been a fan of it myself, but good to get exposure to different ideas.
+
 **The Lean Startup**
 
 Pretty good. I liked chapter 11 the adaptive organization, "innovation sandbox" stuff. It would be interesting to work at a corporate that actually walks the walk on that kind of stuff. Also liked the "proportial response" to each of the Five Whys question, I always thought the Five Whys was kind of goofy but I think the author has changed my mind.
