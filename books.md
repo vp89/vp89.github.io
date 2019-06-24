@@ -7,6 +7,11 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**Building a High-performance Team (Pluralsight)**
+
+Mixing it up with some non-technical stuff, I liked the 10 characteristics. Overall was very "shallow", was hoping for some
+deeper insights on the topic.
+
 **Domain-Driven Design Fundamentals (Pluralsight)**
 
 Most of the stuff I thought sensible seems orthogonal to OOP, though the course really pitches that "rich domain model" ORM-heavy
