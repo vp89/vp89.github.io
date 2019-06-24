@@ -50,3 +50,7 @@ Fun beach reading.
 **Developer Hegemony**
 
 The Gervais Principle repackaged for bitter software nerds. I wish I could buy The Gervais Principle as a paperback.
+
+**(+1) How Git Works & Mastering Git (Pluralsight)**
+
+Two excellent courses which explain the internals of Git in a clear way. This IMO is the better approach to learning Git rather than fixating on the vast array of commands.
