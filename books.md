@@ -7,6 +7,10 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**Using Docker on AWS (Pluralsight)**
+
+Pretty good primer of the different container deployment options on AWS. Doesn't go too deep into anything but some nice nuggets sprinkled in.
+
 **Building a High-performance Team (Pluralsight)**
 
 Mixing it up with some non-technical stuff, I liked the 10 characteristics. Overall was very "shallow", was hoping for some
