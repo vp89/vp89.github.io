@@ -7,6 +7,10 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
+**(+1) Docker and Kubernetes: The Big Picture (Pluralsight)**
+
+Excellent primer, really like the author's light-hearted style. Good to ensure all the high-level stuff is understood before diving deeper.
+
 **Using Docker on AWS (Pluralsight)**
 
 Pretty good primer of the different container deployment options on AWS. Doesn't go too deep into anything but some nice nuggets sprinkled in.
