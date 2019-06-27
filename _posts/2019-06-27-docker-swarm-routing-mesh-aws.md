@@ -7,15 +7,19 @@ categories: programming
 
 Docker has a feature named *swarm mode* which allows you to create a cluster of Docker engines with manager and worker nodes. The cluster has a single leader and commands issued to it are propagated to all the other nodes. I'm quite interested in this feature as it provides a lot of the more commonly used functionality of Kubernetes with less complexity and setup time.
 
-One interesting *sub-feature* of swarm mode is the built-in routing mesh. This mesh allows you to define a `published port` which maps to a `target port`. All nodes in the cluster can accept traffic on the `published port` and automatically route it to nodes which have active containers running and listening on the `target port`.
+One interesting *sub-feature* of swarm mode is the built-in routing mesh. This mesh allows you to define a `published port` on your cluster which maps to a `target port`. All nodes in the cluster can accept traffic on the `published port` and automatically route it to nodes which have active containers running and listening on the `target port`.
 
 So for example, let's say you have a cluster of 5 nodes with the following IPs:
 
-`192.168.1.2, 192.168.1.3, 192.168.1.4, 192.168.1.5, 192.168.1.6`
+- 192.168.1.2
+- 192.168.1.3
+- 192.168.1.4
+- 192.168.1.5
+- 192.168.1.6
 
-You have a `Docker service` configured with an HTTP application listening on port 80 but you only want it to run on 3 of the 5 nodes. With the routing mesh, you could hit either of the 2 IPs which aren't running that app and the traffic will be routed and load-balanced to one of the active nodes running the app.
+You also have a `Docker service` configured with a containerized application listening on port 80, set to use 3 replicas. With the routing mesh, you could hit either of the 2 hosts which isn't running that container and the traffic will be routed and load-balanced to one of the active nodes which is.
 
-This is not supposed to act in place of a real load-balancer, but the two can work well together. For example the load balancer can be configured to include all the nodes in the cluster and then as you increase or decrease the number of replicas used by that `Docker service`, you won't need to modify the load balancer config. The traffic will get load-balanced across all the 5 nodes and then Docker will route it and load-balance it across just the nodes you are using for that app.
+This is not supposed to act in place of a real load-balancer, but the two can work well together. For example the load balancer can be configured to include all the nodes in the cluster and then as you increase or decrease the number of replicas, you won't need to modify the load balancer config.
 
 One requirement for this routing mesh to work is for the following ports to be enabled for ingress on all nodes in the cluster:
 
