@@ -7,24 +7,6 @@ layout: default
 
 From most to least recently read, highly recommended books have a (+1) at the start.
 
-**(+1) Docker and Kubernetes: The Big Picture (Pluralsight)**
-
-Excellent primer, really like the author's light-hearted style. Good to ensure all the high-level stuff is understood before diving deeper.
-
-**Using Docker on AWS (Pluralsight)**
-
-Pretty good primer of the different container deployment options on AWS. Doesn't go too deep into anything but some nice nuggets sprinkled in.
-
-**Building a High-performance Team (Pluralsight)**
-
-Mixing it up with some non-technical stuff, I liked the 10 characteristics. Overall was very "shallow", was hoping for some
-deeper insights on the topic.
-
-**Domain-Driven Design Fundamentals (Pluralsight)**
-
-Most of the stuff I thought sensible seems orthogonal to OOP, though the course really pitches that "rich domain model" ORM-heavy
-style of programming. Never been a fan of it myself, but good to get exposure to different ideas.
-
 **The Lean Startup**
 
 Pretty good. I liked chapter 11 the adaptive organization, "innovation sandbox" stuff. It would be interesting to work at a corporate that actually walks the walk on that kind of stuff. Also liked the "proportial response" to each of the Five Whys question, I always thought the Five Whys was kind of goofy but I think the author has changed my mind.
@@ -59,6 +41,20 @@ Fun beach reading.
 
 The Gervais Principle repackaged for bitter software nerds. I wish I could buy The Gervais Principle as a paperback.
 
-**(+1) How Git Works & Mastering Git (Pluralsight)**
+# Courses
 
-Two excellent courses which explain the internals of Git in a clear way. This IMO is the better approach to learning Git rather than fixating on the vast array of commands.
+A list of courses I have watched/attended, recommended get a +1:
+
+**(+1) Getting Started with Docker (Pluralsight)**
+
+**(+1) Docker and Kubernetes: The Big Picture (Pluralsight)**
+
+**Using Docker on AWS (Pluralsight)**
+
+**Building a High-performance Team (Pluralsight)**
+
+**Domain-Driven Design Fundamentals (Pluralsight)**
+
+**(+1) Mastering Git (Pluralsight)**
+
+**(+1) How Git Works (Pluralsight)**
