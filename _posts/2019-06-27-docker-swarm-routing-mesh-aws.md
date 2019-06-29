@@ -37,4 +37,4 @@ Defining a port to be a `published port` on an existing service can be done in t
 docker service update --publish-add published=<PUBLISHED-PORT>,target=<CONTAINER-PORT> <SERVICE>
 ```
 
-As always make sure to check out the excellent Docker documentation for more details: https://docs.docker.com/engine/swarm/ingress/
+Check out the excellent [Docker documentation](https://docs.docker.com/engine/swarm/ingress/) for more details.
