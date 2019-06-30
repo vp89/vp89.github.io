@@ -45,6 +45,8 @@ The Gervais Principle repackaged for bitter software nerds. I wish I could buy T
 
 A list of courses I have watched/attended, recommended get a +1:
 
+**(+1) Docker Deep Dive (Pluralsight)**
+
 **(+1) Getting Started with Docker (Pluralsight)**
 
 **(+1) Docker and Kubernetes: The Big Picture (Pluralsight)**
