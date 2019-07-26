@@ -15,6 +15,7 @@ I'm also a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
 
 ### Resume
 
+- Lead Software Developer at DraftKings (Jul 2019 - Present)
 - Lead Software Developer at Athenahealth (May 2017 - Mar 2019)
 - Software Developer at FortressGB (Feb 2012 - Apr 2017)
 - Support Analyst at FortressGB (Nov 2010 - Jan 2012)
