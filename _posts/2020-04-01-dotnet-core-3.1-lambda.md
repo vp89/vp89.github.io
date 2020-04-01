@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Taking .NET Core 3.1 Lambdas for a spin"
+title:  ".NET Core 3.1 fixes cold starts on AWS Lambda"
 date:   2020-04-01 00:00:00 -0500
 categories: sample
 ---
