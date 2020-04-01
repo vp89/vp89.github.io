@@ -24,9 +24,7 @@ transaction/c24836c6-815b-4b52-b217-99f4e5f1b45a-2018-01-01-00-00-00-000.csv
 transaction/012-2018-01-01-00-00-00-000.csv
 ```
 
-The first pattern would allow you super granular list operations up to 32 characters in precision but it's likely that it will be more useful to you to be able to have a 2 or 3 character prefix and timestamp. This would allow you to do time-based searches while still using a concurrent divide and conquer approach.
-
-For example with a 3 character decimal prefix you would need to make 10<sup>3</sup> calls to get all files processed in `2018-04`. If you used something like Go which has very lightweight concurrency primitives you could make 1000 concurrent calls without using tons of RAM.
+The first pattern would allow you super granular list operations up to 32 characters in precision but it's likely that it will be more useful to you to be able to have a 2 or 3 character prefix and timestamp. This would allow you to run the `ls` commands concurrently while still doing fine-grained time-based searches on your bucket.
 
 ```
 ls s3://bucket/transaction/000-2018-04
