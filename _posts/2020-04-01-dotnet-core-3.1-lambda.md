@@ -2,7 +2,7 @@
 layout: post
 title:  ".NET Core 3.1 fixes cold starts on AWS Lambda"
 date:   2020-04-01 00:00:00 -0500
-categories: sample
+categories: programming
 ---
 
 As of [yesterday](https://aws.amazon.com/blogs/compute/announcing-aws-lambda-supports-for-net-core-3-1/), AWS announced support for the .NET Core 3.1 runtime on AWS Lambda. This has been an [eagerly anticipated](https://github.com/aws/aws-lambda-dotnet/issues/554) upgrade as there is reason to believe that the long-standing and [well documented](https://mikhail.io/serverless/coldstarts/aws/) issues with cold starts should be somewhat mitigated.
