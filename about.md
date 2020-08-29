@@ -3,7 +3,7 @@ title: About
 layout: default
 ---
 
-<img src="photo.png" />
+<img src="images/photo.png" />
 
 ### About me
 

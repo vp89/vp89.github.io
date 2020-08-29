@@ -9,7 +9,7 @@ I recently watched this talk on [Advanced DynamoDB Design Patterns](https://www.
 
 The presenter states that we have yet to hit the "slope of enlightenment" with regards to NoSQL adoption because most people who are currently using it are not using it properly.
 
-<img src="/dynamo-hype-curve.png" />
+<img src="/images/dynamo-hype-curve.png" />
 
 The gist of it is that NoSQL is quite unforgiving and you need to be very clever up front in the way you model your data to fit all your access patterns. One of the recommendations made is to put all your data in the same table or key space. You then use clever combinations of composite keys in your partition and sort keys to differentiate the types of data and have efficient look-ups. This is reiterated in this AWS documentation about [NoSQL design best practices](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html#bp-general-nosql-design-concepts).
 

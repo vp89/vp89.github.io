@@ -50,7 +50,7 @@ Open `~/.pgpass` in your editor and add the following contents:
 
 Now, from the root of your repo run the script using `./scripts/schema-compare.sh`. If everything is setup correctly you should see a p4merge output like the following:
 
-<img src="/p4merge-schema-compare.png" />
+<img src="/images/p4merge-schema-compare.png" />
 
 If everything is in sync, you should see 0 diffs.
 
