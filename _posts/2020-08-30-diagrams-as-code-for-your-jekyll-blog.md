@@ -34,4 +34,4 @@ sequenceDiagram
 </div>
 ```
 
-And that's all it takes. Simpler than installing plugins, the JS will conditionally load only for pages that require it so you don't need to bog down the page load for posts that don't have diagrams. In my example, you are taking a dependency on a CDN to render your diagrams but you could also choose the self-host the Mermaid JS yourself.
+And that's all it takes. Simpler than installing plugins, the JS will conditionally load only for pages that require it so you don't need to bog down the page load for posts that don't have diagrams. In my example, you are taking a dependency on a CDN to render your diagrams but you could also choose to self-host the Mermaid JS yourself.
