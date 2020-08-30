@@ -12,11 +12,14 @@ I tried integrating it into my Jekyll blog by using some of the existing plugins
 Simply add this snippet to your `default.html` layout page, after the `</body>` tag. This will conditionally load the Mermaid JS and initialize it if you mark a specific post to require it.
 
 ```
+{% raw %}
 {% if page.mermaid %}
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 {% endif %}
+{% endraw %}
 ```
+
 
 In your individual post's Markdown you can then specify `markdown: true` as one of the headers.
 
