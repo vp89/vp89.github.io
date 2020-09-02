@@ -50,10 +50,9 @@ sequenceDiagram
     participant Downstream 1
     participant Downstream 2
     C1->>FIFO Queue: Consume
-    C2->>FIFO Queue: Consume
     FIFO Queue->>C1: T1
-    C1->>FIFO Queue: Consume
-    FIFO Queue->>C1: T2
+    C2->>FIFO Queue: Consume
+    FIFO Queue->>C2: T2
     C1->>Downstream 1:Process T1 (fail)
     C2->>Downstream 1:Process T2
     Downstream 1->>Downstream 2:Process T2
