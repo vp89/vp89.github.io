@@ -116,7 +116,7 @@ sequenceDiagram
     C1->>FIFO Queue: Consume
     FIFO Queue->>C1: T2
     C1->>Downstream 1: Process T2
-    Downstream 1->>C1: Error (bad data)
+    Downstream 1->>C1: Error
     Note over P1: > 5 minutes have passed
     P1->>SQS: Republish T1,T2
     SQS->>DedupeStore: T1,T2 exist?
