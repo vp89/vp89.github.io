@@ -12,8 +12,6 @@ One more obvious issue is that it's pretty easy to hit the default rate limits o
 
 From an architectural perspective, a queue that can practically handle whatever you throw at it is a huge strategic advantage. The more likely the queue system needs to shed load, the more likely we have to deal with that in the thing that publishes to the queue. You could continue to shed load at the publisher level and drop things on the floor, but if you are already thinking about FIFO queue semantics, that is likely not an option. One option is to have a "spillover" standard SQS queue that you publish to when the FIFO queue is overloaded. Any time you are spilling over you would lose the ordering semantics that the FIFO queue supposedly provides but at least you wouldn't need to drop data.
 
-Another option would be to have the publisher queue the messages to it's own internal memory queue as a form of back-pressure. This would allow you to preserve proper ordering (if the creation of data is partitioned by logical groups that ought to be ordered, that is) but it does have some risks that you could overload the memory of the publisher. You also risk data loss if the publisher process crashes. In that case, you would lose all those in-flight messages it had in it's internal memory queue.
-
 #### Ordering
 
 FIFO queues are more limited in their throughput because they provide as the name implies "first-in, first-out" queue semantics. On the surface, this sounds great. Who doesn't want "correct ordering", right? Unfortunately, it's not quite so simple. The order in which data is consumed off the queue doesn't actually provide any comprehensive ordering guarantees for a couple of reasons:
