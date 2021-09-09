@@ -73,9 +73,9 @@ impl ContentMetadata {
 }
 ```
 
-Of note here is the `#[serde(tag = "type")]` attribute. This tells the serialization library how we want to encode our enums using the "internally tagged" [enum representation](https://serde.rs/enum-representations.html). We are making a trade-off by choosing a more human-readable JSON representation at the expense of not being able to use tuple variants in our enum. Struct variants seem more suitable for this use case, so this feels like a net positive.
+Of note here is the `#[serde(tag = "type")]` attribute. This tells the serialization library that we want to encode our enums using the "internally tagged" [enum representation](https://serde.rs/enum-representations.html). We are making a trade-off by choosing a more human-readable JSON representation at the expense of not being able to use tuple variants in our enum. Struct variants seem more suitable for this use case, so this feels like a net positive.
 
-We have also implemented a function `content_type_id` on any variant of `ContentMetadata` to extract a `content_type_id` from it. This function may or may not be required but I am including it to illustrates how concisely we can implement methods that handle every case. The ability to elide any fields of each struct variant you don't need keeps these methods nice and concise.
+We have also implemented a function `content_type_id` on any variant of `ContentMetadata` to extract a `content_type_id` from it. This function may or may not be required but I am including it to illustrate how concisely we can implement methods that handle every case. The ability to elide any unused fields from each struct variant keeps these kinds of methods nice and concise.
 
 We can get the JSON encoded content metadata out of the database and into the appropriate ContentMetadata variant using the following code:
 
@@ -93,7 +93,7 @@ let content_entry = sqlx::query_as!(
 
 Note that we must explicitly return the `content_metadata` as `content_metadata: Json<ContentMetadata>` so that serde can match and deserialize to the correct field.
 
-To insert a new content entry, we don't have to do anything too interesting. Simply pass your ContentMetadata variant into `Json` and pass that in as a query parameter:
+To insert a new content entry, pass your ContentMetadata variant into `Json` and pass that in as a query parameter:
 
 ```
 let content_metadata = ContentMetadata::Music {
@@ -116,10 +116,9 @@ let result = sqlx::query!(
 .await;
 ```
 
-
 ### TypeScript
 
-TypeScript has [discriminated unions]() which is just another word for sum types. TypeScript's story around working with sum types is not as nice as Rust's. As you'll see below, we need to employ a few tricks to get exhaustive pattern matching enforced by the compiler, but it *is* possible without requiring a ton of effort:
+TypeScript has [discriminated unions](https://basarat.gitbook.io/typescript/type-system/discriminated-unions) which is just another word for sum types. TypeScript's story around working with sum types is not as nice as Rust's, in my opinion. As you'll see below, we need to employ a few tricks to get exhaustive pattern matching enforced by the compiler, but it *is* possible without requiring a ton of effort:
 
 ```
 type ContentEntry = {
@@ -158,7 +157,7 @@ enum ContentType {
 }
 ```
 
-As you can see above we have a type for the top-level ContentEntry and `content_metadata` as a field that can have 1 of 3 variants. Each of those variants has a string literal called `type` that we have wrapped with a `ContentType` enum to make renames within this codebase safer.
+As you can see above we have a type for the top-level `ContentEntry` and `content_metadata` as a field that can have 1 of 3 variants. Each of those variants has a string literal called `type` that we have wrapped with a `ContentType` enum to make renames within this codebase safer.
 
 Here is some dummy code to deal with these variants in an exhaustive way:
 
@@ -188,7 +187,7 @@ function exhaustive(x: never): never {
 }
 ```
 
-The above code uses a TypeScript technique called [narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions) on the `type` string literal as well as a trick using the `never` type to provide exhaustive pattern matching. The TypeScript compiler knows all the possible string literals in `ContentEntry.content_metadata.type` so it can fall through to the default block if it sees that one isn't handled. This sets off a compiler error because this block is calling a function that should never return.
+The above code uses a TypeScript technique called [narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions) on the `type` string literal as well as a trick using the `never` type to provide exhaustive pattern matching. The TypeScript compiler knows all the possible string literals in `ContentEntry.content_metadata.type` so it can fall through to the default case block if it sees one that isn't handled. This sets off a compiler error because this block is calling a function that should never return.
 
 ### Evolving the enum
 
@@ -216,7 +215,7 @@ type Movie = {
 }
 ```
 
-This would allow your code to deal with previously encoded variants where this field didn't exist. You could then "backfill" this field into the existing JSON encoded values using some code like this:
+This would allow the code to deal with previously encoded variants where this field didn't exist. You could then "backfill" this field in the database, amending the existing JSON encoded values using some code like this:
 
 ```
 UPDATE content_entries
@@ -225,7 +224,7 @@ WHERE content_type_id = 3
 AND NOT content_metadata ? 'genre';
 ```
 
-The TypeScript and Rust variants could now safely be encoded to not support "nullable" values.
+The TypeScript and Rust variants could now safely be modified to no longer support "nullable" values.
 
 ### Drawbacks
 
@@ -235,4 +234,4 @@ Another, similar, drawback is that the database itself does not provide any type
 
 ### Source code
 
-Full source code for this exploration is available on [GitHub](https://github.com/vp89/rust-ts-sum-types)
+Full source code is available on [GitHub](https://github.com/vp89/rust-ts-sum-types)
