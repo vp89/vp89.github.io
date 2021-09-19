@@ -3,7 +3,7 @@ title: About
 layout: default
 ---
 
-<img src="images/photo.png" />
+<img src="images/photo.png" alt="Photo of Vince Pergolizzi" />
 
 ### About me
 
