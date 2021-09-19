@@ -183,7 +183,7 @@ import axios from 'axios';
 })();
 
 function exhaustive(x: never): never {
-    throw new Error("Unhandled animal kind in the system");
+    throw new Error("Unhandled metadata type in the system");
 }
 ```
 
