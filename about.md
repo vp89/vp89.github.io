@@ -16,11 +16,11 @@ I'm also a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
 ### Resume
 
 - Senior Lead Software Engineer at DraftKings (Jul 2019 - Present)
-- Lead Software Engineer at Athenahealth (May 2017 - Mar 2019)
+- Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
 - Software Engineer at FortressGB (Feb 2012 - Apr 2017)
 - Support Analyst at FortressGB (Nov 2010 - Jan 2012)
 
-BSc, Computer Science from **THE** University of Hertfordshire
+BSc, Computer Science from the University of Hertfordshire (2007-2010)
 
 ### About this site
 
