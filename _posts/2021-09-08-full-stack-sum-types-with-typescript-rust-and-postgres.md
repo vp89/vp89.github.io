@@ -5,7 +5,7 @@ date:   2021-09-08 00:00:00 -0500
 categories: programming
 ---
 
-[Sum types](https://en.wikipedia.org/wiki/Tagged_union) allow you to model that a particular value can be typed in one of many, pre-defined ways. This provides a lot of the flexibility you get from using untyped dynamic values without giving up on compile-time safety. Using sum types to implement variants leads to clean, straight-forward code. Languages that don't have sum types force their users to effectively emulate them using verbose, complicated "patterns". In the database layer, storing variants as scalar values allows for simple access patterns that perform well at scale and should be portable to pretty much any database you might be using. The ability to model these variants in a relatively consistent way across all layers of the stack makes applications easier to debug and reason about.
+[Sum types](https://en.wikipedia.org/wiki/Tagged_union) allow you to model that a particular value can be typed in one of many, pre-defined ways. This provides a lot of the flexibility you get from using untyped dynamic values without giving up on compile-time safety. Using sum types to implement variants leads to clean, straight-forward code. Languages that don't have sum types force their users to effectively emulate them using verbose, complicated "patterns". In the database layer, storing variants as scalar values allows for simple access patterns that perform well at scale and are portable to pretty much any database you might be using. The ability to model these variants in a relatively consistent way across all layers of the stack makes applications easier to debug and reason about.
 
 At the heart of our exploration will be Rust. Rust provides first-class support for sum types, which it calls [`enums`](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html). Rust has [powerful, exhaustive pattern matching](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html) on enums that provide elegant, ergonomic solutions for avoiding the "null problem" and treating errors as values. In regular application code, the combination of sum types and pattern matching result in straightforward code that can be as flexible as you require without extraneous layers and/or contrived hierarchical structures that you typically see when working with "object-oriented" languages.
 
@@ -118,7 +118,9 @@ let result = sqlx::query!(
 
 ### TypeScript
 
-TypeScript has [discriminated unions](https://basarat.gitbook.io/typescript/type-system/discriminated-unions) which is just another word for sum types. TypeScript's story around working with sum types is not as nice as Rust's, in my opinion. As you'll see below, we need to employ a few tricks to get exhaustive pattern matching enforced by the compiler, but it *is* possible without requiring a ton of effort:
+TypeScript has untagged [union types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) which are similar to Rust sum types but require a little more work to deal with variants exhaustively across a codebase. Another term for sum types is `tagged unions` and that should make it clear how they are different to what TypeScript provides. In TypeScript, you can't simply pattern match or *branch* on the type of a variant because the type does not includes any information about what it is (ie. a tag).
+
+In the following example we'll show how can emulate strictly checked sum types without requiring a ton of effort, using string literals and a technique called narrowing:
 
 ```
 type ContentEntry = {
