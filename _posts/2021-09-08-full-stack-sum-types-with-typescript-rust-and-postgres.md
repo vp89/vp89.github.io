@@ -118,9 +118,9 @@ let result = sqlx::query!(
 
 ### TypeScript
 
-TypeScript has untagged [union types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) which are similar to Rust sum types but require a little more work to deal with variants exhaustively across a codebase. Another term for sum types is `tagged unions` and that should make it clear how they are different to what TypeScript provides. In TypeScript, you can't simply pattern match or *branch* on the type of a variant because the type does not includes any information about what it is (ie. a tag).
+TypeScript has untagged [union types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html) which are similar to Rust sum types but require a little more work to deal with variants exhaustively across a codebase. Another term for sum types is `tagged unions` and that should make it clear how they are different to what TypeScript provides. In TypeScript, you can't simply pattern match or *branch* on the type of a variant because values of a union type don't include information about *what* they are (ie. a tag).
 
-In the following example we'll show how can emulate strictly checked sum types without requiring a ton of effort, using string literals and a technique called narrowing:
+The following example will show how we can emulate proper sum types in TypeScript using `string literals` and a technique called `narrowing`:
 
 ```
 type ContentEntry = {
