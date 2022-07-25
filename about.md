@@ -9,16 +9,14 @@ layout: default
 
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
-I'm a software developer with 9 years of experience building data intensive applications in various industries.
-
-I'm also a purple belt in Brazilian Jiu-Jitsu under Roberto Maia.
+I'm a staff-level Software Engineer with 11+ years of experience working on prominent consumer and business facing products. I'm passionate about making computers and people work more efficiently at scale.
 
 ### Resume
 
-- Senior Lead Software Engineer at DraftKings (Jul 2019 - Present)
+- Senior Lead Software Engineer at DraftKings (Jan 2021 - Present)
+- Lead Software Engineer at DraftKings (Jul 2019 - Dec 2020)
 - Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
-- Software Engineer at FortressGB (Feb 2012 - Apr 2017)
-- Support Analyst at FortressGB (Nov 2010 - Jan 2012)
+- Software Engineer at FortressGB (Nov 2010 - Apr 2017)
 
 BSc, Computer Science from the University of Hertfordshire (2007-2010)
 
