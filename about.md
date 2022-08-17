@@ -18,6 +18,8 @@ I'm a staff-level Software Engineer with 11+ years of experience working on prom
 - Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
 - Software Engineer at FortressGB (Nov 2010 - Apr 2017)
 
+<a href="assets/resume.pdf">Detailed resume</a>
+
 BSc, Computer Science from the University of Hertfordshire (2007-2010)
 
 ### About this site
