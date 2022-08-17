@@ -13,12 +13,12 @@ I'm a staff-level Software Engineer with 11+ years of experience working on prom
 
 ### Resume
 
+<a href="assets/resume.pdf">Detailed resume</a>
+
 - Senior Lead Software Engineer at DraftKings (Jan 2021 - Present)
 - Lead Software Engineer at DraftKings (Jul 2019 - Dec 2020)
 - Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
 - Software Engineer at FortressGB (Nov 2010 - Apr 2017)
-
-<a href="assets/resume.pdf">Detailed resume</a>
 
 BSc, Computer Science from the University of Hertfordshire (2007-2010)
 
