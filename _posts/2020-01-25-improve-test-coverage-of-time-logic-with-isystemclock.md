@@ -2,7 +2,7 @@
 layout: post
 title:  "Improve test coverage of time sensitive logic with ISystemClock"
 date:   2020-01-25 00:00:00 -0500
-categories: c#
+categories: programming
 ---
 
 A quick post to get back into writing for the new year. The 2nd half of 2019 was pretty hectic with me starting a new job, but things are beginning to stabilize and I'd like to start putting posts out on a semi-regular cadence again.

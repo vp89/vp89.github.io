@@ -9,13 +9,12 @@ layout: default
 
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
-I'm a staff-level Software Engineer with 11+ years of experience working on prominent consumer and business facing products. I'm passionate about making computers and people work more efficiently at scale.
+I'm a Software Engineer with 12+ years of experience working on prominent consumer and business facing products. I'm passionate about making computers and people work more efficiently at scale.
 
 ### Resume
 
-<a href="assets/resume.pdf">Detailed resume</a>
-
-- Senior Lead Software Engineer at DraftKings (Jan 2021 - Present)
+- Principal Software Engineer at Toast (Dec 2022 - Present)
+- Senior Lead Software Engineer at DraftKings (Jan 2021 - Nov 2022)
 - Lead Software Engineer at DraftKings (Jul 2019 - Dec 2020)
 - Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
 - Software Engineer at FortressGB (Nov 2010 - Apr 2017)

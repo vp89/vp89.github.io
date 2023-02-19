@@ -2,7 +2,7 @@
 layout: post
 title:  "MemoryCache deep dive"
 date:   2020-01-25 00:00:00 -0500
-categories: c#
+categories: programming
 ---
 
 I was curious to know more about how the MemoryCache implementation works in .NET Core and the documentation (as usual) provides an OK but not wholly satisfying look into the internals of it, nor does it provide much color into good practices or things to watch out for when using this type.
