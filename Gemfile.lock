@@ -73,7 +73,7 @@ DEPENDENCIES
   minima (= 2.5.1)
 
 RUBY VERSION
-   ruby 2.7.3p183
+   ruby 2.7.6p219
 
 BUNDLED WITH
    1.17.3
