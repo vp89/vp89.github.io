@@ -13,7 +13,8 @@ I'm a Software Engineer with 12+ years of experience working on prominent consum
 
 ### Resume
 
-- Principal Software Engineer at Toast (Dec 2022 - Present)
+- Senior Lead Software Engineer at DraftKings (May 2023 - Present)
+- Principal Software Engineer at Toast (Dec 2022 - May 2023)
 - Senior Lead Software Engineer at DraftKings (Jan 2021 - Nov 2022)
 - Lead Software Engineer at DraftKings (Jul 2019 - Dec 2020)
 - Lead Software Engineer at athenahealth (May 2017 - Mar 2019)
