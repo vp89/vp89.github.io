@@ -9,7 +9,7 @@ layout: default
 
 Hi, I'm Vince Pergolizzi. Welcome to my web site.
 
-I'm a Software Engineer with 12+ years of experience working on prominent consumer and business facing products. I'm passionate about making computers and people work more efficiently at scale.
+I'm a Software Engineer with 12+ years of experience working on prominent consumer and business facing products.
 
 ### Resume
 
