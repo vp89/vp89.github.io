@@ -13,4 +13,7 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
   {% endif %}
+  {% if page.wiki %}
+  <meta name="robots" content="none, noarchive, nositelinkssearchbox, nosnippet, noimageindex" />
+  {% endif %}
 </head>

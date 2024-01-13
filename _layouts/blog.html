@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="home">
+    {{ content }}
+    <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <div>
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <div style="float:right;"><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></div>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>

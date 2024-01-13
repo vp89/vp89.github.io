@@ -1,17 +1,23 @@
 ---
 layout: default
 ---
+
+<p>
+  Welcome to my personal Software Engineering wiki. The previous blog <a href="/blog.html">remains here</a>.
+</p>
+
+<br />
+
 <div class="home">
-  {{ content }}
   <ul class="post-list">
-  {% for post in site.posts %}
+  {% for page in site.pages %}
+  {% if page.wiki %}
     <li>
       <div>
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        <div style="float:right;"><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></div>
+        <a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
       </div>
     </li>
+  {% endif %}
   {% endfor %}
   </ul>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 </div>
