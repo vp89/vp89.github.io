@@ -20,27 +20,12 @@ update_date: 2023-01-16 08:03:00 -0500
     - The ticket server could be easily sharded into 2 writers each generating only odd or even numbers and each shard could have standbys/replicas to achieve HA for the id generation
     - The downsides of this pattern are that `INSERT`s require 2 round trips to a database, done sequentially. This cost could be amortized over many `INSERT`s by lazily claiming a batch of Ids from the ticket server instead of just 1
     - <img src="/images/ticket-server.drawio.png" />
-- The structure of UUIDv7 is (128 bits):
-    ```
-0                   1                   2                   3
-0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                           unix_ts_ms                          |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|          unix_ts_ms           |  ver  |       rand_a          |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|var|                        rand_b                             |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                            rand_b                             |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-    ```
-    - Can generate ids up to the year ~10686 with an additional 74 bits for additional precision (upto nanosecond), sequencing or entropy
-    - Submillisecond precision is optional, allowing encoder and decoder to operate at different levels of precision.
-    - If the decoder expects more precision than the decoder then the decoded timestamp will be "incorrect" to the extent of the delta
 
-- If using anything but bigserial or uuidv4, you will need to build up a toolchain around it to make it easy to work with
-    - How and where are ids generated? You could write a SQL function but it could be slow. Can you deploy non-SQL code to the database?
-    - Can generate ids client-side but you increase risk of clock-synchronization issues. Clocks can get out of sync and can even go backwards in some cases
-    - Helper SQL functions to encode/decode to a human-readable format and to convert a timestamp to an id to enable range scans on the id
+- If using anything but bigserial or UUIDv4, you will need to build up a toolchain around it to make it easy to work with. ULID is more mature than UUIDv7 at the time of writing but this could change
+    - Server-side generator, encode from human-readable string, decode to human-readable string, generate from timestamp (for time-based range query)
 
 - A nice benefit of schemes which prefix the id with a timestamp is that an additional secondary index on a `created_at` column is not needed to enable pruning of data based on when it was created
+    ```
+    SET @cutoff = ULID_FROM_DATETIME('2024-01-01');
+    DELETE FROM table WHERE id < @cutoff;
+    ```
