@@ -10,7 +10,7 @@ update_date: 2023-01-16 08:03:00 -0500
 - For apps that use a single-writer RDBMS, an 8 byte monotonically increasing unsigned integer (aka bigserial) is a good default option
 - Identifiers can leak information, this can have varying implications depending on whether the identifier is externally visible, which scheme is used and what entity it's attached to:
     - "Bigserial" can leak how many entities have been created and whether 1 particular entity was created before another
-    - [UUIDv7](https://www.ietf.org/archive/id/draft-peabody-dispatch-new-uuid-format-01.html) or [ULID](https://github.com/ulid/spec) can leak when an entity was created
+    - [UUIDv7](https://datatracker.ietf.org/doc/draft-ietf-uuidrev-rfc4122bis/) or [ULID](https://github.com/ulid/spec) can leak when an entity was created
     - [Snowflake IDs](https://en.wikipedia.org/wiki/Snowflake_ID) contain a "machine id" to facilitate sharding. This leaks that the database is sharded, how many machines exist and whether 2 entities are colocated together
 - [UUIDv4s](https://datatracker.ietf.org/doc/html/rfc4122#section-4.4) contain 122 bits of entropy (6 bits representing the version/variant). This scheme does not leak any information
 - If using an RDBMS, UUIDv4 will result in much worse `INSERT` performance once the table no longer fits in memory. This is because the part of the index you are modifying is less likely to already be in memory, resulting in an additional read IOP on every insert.
@@ -23,22 +23,20 @@ update_date: 2023-01-16 08:03:00 -0500
 - The structure of UUIDv7 is (128 bits):
     ```
 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                            unixts                             |
+|                           unix_ts_ms                          |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|unixts |       subsec_a        |  ver  |       subsec_b        |
+|          unix_ts_ms           |  ver  |       rand_a          |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|var|                   subsec_seq_node                         |
+|var|                        rand_b                             |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                       subsec_seq_node                         |
+|                            rand_b                             |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     ```
-    - Can generate ids up to the year 4147 with an additional 86 bits for additional precision (upto nanosecond), sequencing or entropy
-    - Subsecond precision is optional, allowing encoder and decoder to operate at different levels of precision.
-    - If the decoder expects more precision than the decoder then the decoded timestamp will be incorrect to the extent of the delta
-    - This scheme is still in draft but people seem to be using it because they think it will be a "standard"
-    - A benefit of this scheme is that you can retrofit wherever you might be using UUIDv4
+    - Can generate ids up to the year ~10686 with an additional 74 bits for additional precision (upto nanosecond), sequencing or entropy
+    - Submillisecond precision is optional, allowing encoder and decoder to operate at different levels of precision.
+    - If the decoder expects more precision than the decoder then the decoded timestamp will be "incorrect" to the extent of the delta
 
 - If using anything but bigserial or uuidv4, you will need to build up a toolchain around it to make it easy to work with
     - How and where are ids generated? You could write a SQL function but it could be slow. Can you deploy non-SQL code to the database?
