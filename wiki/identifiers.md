@@ -39,3 +39,10 @@ update_date: 2023-01-16 08:03:00 -0500
     - If the decoder expects more precision than the decoder then the decoded timestamp will be incorrect to the extent of the delta
     - This scheme is still in draft but people seem to be using it because they think it will be a "standard"
     - A benefit of this scheme is that you can retrofit wherever you might be using UUIDv4
+
+- If using anything but bigserial or uuidv4, you will need to build up a toolchain around it to make it easy to work with
+    - How and where are ids generated? You could write a SQL function but it could be slow. Can you deploy non-SQL code to the database?
+    - Can generate ids client-side but you increase risk of clock-synchronization issues. Clocks can get out of sync and can even go backwards in some cases
+    - Helper SQL functions to encode/decode to a human-readable format and to convert a timestamp to an id to enable range scans on the id
+
+- A nice benefit of schemes which prefix the id with a timestamp is that an additional secondary index on a `created_at` column is not needed to enable pruning of data based on when it was created
