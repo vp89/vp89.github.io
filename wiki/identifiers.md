@@ -3,8 +3,8 @@ title: Identifiers
 layout: wiki
 wiki: true
 status: in progress
-create_date: 2023-01-13 14:07:00 -0500
-update_date: 2023-01-16 08:03:00 -0500
+create_date: 2024-01-13 14:07:00 -0500
+update_date: 2024-01-27 08:03:00 -0500
 ---
 
 - For apps that use a single-writer RDBMS, an 8 byte monotonically increasing unsigned integer (aka bigserial) is a good default option
