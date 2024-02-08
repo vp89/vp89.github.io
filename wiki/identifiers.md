@@ -31,7 +31,7 @@ update_date: 2024-01-27 08:03:00 -0500
     DELETE FROM table WHERE id < @cutoff;
     ```
 
-- Sortable 64 bit id is highly efficient but difficult to provide global uniqueness without some kind of "shard id":
+- Time-sortable 64 bit id is highly efficient but difficult to provide global uniqueness without some kind of "shard id":
     - 44 bits for timestamp
         - 10 bits for milliseconds
         - 34 bits for seconds from an epoch = 544 years
