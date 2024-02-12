@@ -24,7 +24,7 @@ update_date: 2024-01-27 08:03:00 -0500
 - If using anything but bigserial or UUIDv4, you will need to build up a toolchain around it to make it easy to work with. ULID is more mature than UUIDv7 at the time of writing but this could change
     - Server-side generator, encode from human-readable string, decode to human-readable string, generate from timestamp (for time-based range query)
 
-- A nice benefit of schemes which prefix the id with a timestamp is that an additional secondary index on a `created_at` column is not needed to enable pruning of data based on when it was created
+- A nice benefit of schemes which prefix the id with a timestamp is that an additional secondary index on a `created_at` column is not needed to enable querying or pruning of data based on when it was created
 
     ```
     SET @cutoff = ULID_FROM_DATETIME('2024-01-01');
