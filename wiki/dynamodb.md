@@ -22,8 +22,8 @@ update_date: 2024-01-27 14:17:00 -0500
 
 - The [streams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/streamsmain.html) feature enables an elegant solution for the [dual write problem](https://www.confluent.io/blog/using-logs-to-build-a-solid-data-infrastructure-or-why-dual-writes-are-a-bad-idea/):
     - <img src="/images/dynamo-streams-outbox.drawio.png" />
-    - Can retain testability of your event construction by writing to an `outboxJson` attribute and having a simple pipes transform that "renders" it's value
+    - Can retain testability and encapsulation by writing fully formed events to an `outboxJson` attribute and having a simple pipes transform that "renders" it's value
     - To preserve atomicity, this attribute can be appended to the item already being written to or you can use TransactWriteItems
-    - DynamoDB streams supports up to 2 consumers, you can have 1 pipe for your transactional outbox and 1 for your CDC into the data warehouse
-    - If you have many distinct events and consumers, they can still be services with 1 pipe by having it's target be an SNS topic. Each queue subscription can filter on a common `eventType` field. You could also have an EventBridge "event bus" be your target if you need more complex routing rules, but the cost is ~2x
-    - EventBridge is $0.4/MM *records* after any filtering. A record is up to 64kb of data and it's able to consume batches of changes from the stream shards. Unclear whether there is a charge for a "pipe" to read from the stream, there isn't when Lambda polls the stream so presumably the same would apply here
+    - DynamoDB streams supports up to 2 consumers, you can have 1 pipe for your "outbox" and for your data warehousing
+    - If you have many distinct events and consumers, they can all be serviced with a single pipe by having it target an SNS topic with filtered queue subscriptions on a common `eventType` field. Another option is to leverage EventBridge event bus but the cost is higher
+    - EventBridge pipes cost $0.4/MM *records* after filtering. A record is up to 64kb of data and it's able to consume batches of changes from the stream shards. It's unclear whether there is a charge for a "pipe" to read from the stream, there isn't when Lambda polls the stream so presumably the same would apply here
