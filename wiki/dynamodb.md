@@ -7,6 +7,11 @@ create_date: 2024-01-27 14:17:00 -0500
 update_date: 2024-01-27 14:17:00 -0500
 ---
 
+- In 2019, I was [skeptical](https://vincepergolizzi.com/programming/2019/02/19/no-sql-transitory-technology.html) of DynamoDB but the features and integrations with other AWS services that have been added since have made it a more compelling option for *some* OLTP workloads
+    - The key/value model amplifies storage of the data set, to what extent depends on your workload and your ability/willingness to mitigate, storage is 2.5x higher than on RDS. For large data sets it's not cost effective
+    - More complex modeling/access patterns *are* possible but there is a steep learning curve, harder to fix after the fact
+    - Canonical use case is something like a session store or shopping cart service
+
 - When load testing with DynamoDB, you need good up front understanding of how tables scale otherwise you will waste time and potentially draw the wrong conclusions
     - Testing against the same table continuously may result in the wrong conclusions. When you deploy to Prod for the first time, the table may not be split in the same way or support the same peaks, if using on demand capacity
     - Longer tests will provide better signal as the partition splitting tends to require sustained peaks
